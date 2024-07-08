@@ -16,7 +16,7 @@ Criar, ler, alterar, apagar = lista[i] (CRUD)
 """
 #        0   1   2   3
 lista = [10, 20, 30, 40]
-lista.append('Luiz')
+lista.append('Vitor')
 nome = lista.pop()
 lista.append(1233)
 del lista[-1]
