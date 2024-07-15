@@ -11,8 +11,8 @@ def multiplicar(*args):
     return total
 
 
-multiplicação = multiplicar(10, 2, 3, 4, 5)
-print(multiplicação)
+multiplicacao = multiplicar(10, 2, 3, 4, 5)
+print(multiplicacao)
 
 
 # Crie uma função fala se um número é par ou ímpar.
