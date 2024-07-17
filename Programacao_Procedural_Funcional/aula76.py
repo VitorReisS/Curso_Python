@@ -11,8 +11,8 @@
 # Imutáveis: str, int, float, bool, tuple
 # Mutável: dict, list
 # pessoa = {
-#     'nome': 'Luiz Otávio',
-#     'sobrenome': 'Miranda',
+#     'nome': 'Vitor',
+#     'sobrenome': 'Reis',
 #     'idade': 18,
 #     'altura': 1.8,
 #     'endereços': [
@@ -20,10 +20,10 @@
 #         {'rua': 'outra rua', 'número': 321},
 #     ]
 # }
-# pessoa = dict(nome='Luiz Otávio', sobrenome='Miranda')
+# pessoa = dict(nome='Vitor', sobrenome='Reis')
 pessoa = {
-    'nome': 'Luiz Otávio',
-    'sobrenome': 'Miranda',
+    'nome': 'Vitor',
+    'sobrenome': 'Reis',
     'idade': 18,
     'altura': 1.8,
     'endereços': [
