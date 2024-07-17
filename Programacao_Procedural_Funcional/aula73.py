@@ -10,7 +10,7 @@ def executa(funcao, *args):
     return funcao(*args)
 
 print(
-    executa(saudacao, 'Bom dia', 'Luiz')
+    executa(saudacao, 'Bom dia', 'Vitor')
 )
 print(
     executa(saudacao, 'Boa noite', 'Maria')
