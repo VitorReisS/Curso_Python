@@ -7,9 +7,9 @@
 
 # Criando um set
 # set(iterável) ou {1, 2, 3}
-# s1 = set('Luiz')
+# s1 = set('Vitor')
 s1 = set()  # vazio
-s1 = {'Luiz', 1, 2, 3}  # com dados
+s1 = {'Vitor', 1, 2, 3}  # com dados
 
 # Sets são eficientes para remover valores duplicados
 # de iteráveis.
