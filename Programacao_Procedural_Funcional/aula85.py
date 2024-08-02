@@ -8,7 +8,7 @@ lista = [
     for y in range(3)
 ]
 lista = [
-    [(x, letra) for letra in 'Luiz']
+    [(x, letra) for letra in 'Vitor']
     for x in range(3)
 ]
 
