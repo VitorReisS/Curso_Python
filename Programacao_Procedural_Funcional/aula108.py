@@ -15,7 +15,9 @@ for i in c1:
         break
 
     print(i)
+    
 print()
+
 print('range')
 for i in r1:
     print(i)
