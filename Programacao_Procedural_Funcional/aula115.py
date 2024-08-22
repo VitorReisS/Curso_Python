@@ -13,3 +13,6 @@
 # Abra a pasta do seu projeto no terminal
 # e digite:
 # python -m venv venv
+
+# Onde fica instalado o Python
+# gcm python -Syntax
