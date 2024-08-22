@@ -8,7 +8,7 @@
 # Você pode dar o nome que preferir para um
 # ambiente virtual, mas os mais comuns são:
 # venv env .venv .env
-#
+
 # Como criar ambientes virtuais
 # Abra a pasta do seu projeto no terminal
 # e digite:
@@ -16,3 +16,17 @@
 
 # Onde fica instalado o Python
 # gcm python -Syntax
+
+# Antes de ativar o aquivo venv
+# .Get-ExecutionPolicy
+# .Set-ExecutionPolicy RemoteSigned
+
+# Ativando e desativando meu ambiente virtual
+# Windows: .\venv\Scripts\activate
+# Linux e Mac: source venv/bin/activate
+# Desativar: deactivate
+
+# No final pode voltar a politica
+# .Set-ExecutionPolicy Restricted
+
+print('OI')
