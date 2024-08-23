@@ -1,3 +1,5 @@
+import os
+
 # Criando arquivos com Python + Context Manager with
 # Leia também: https://www.otaviomiranda.com.br/2020/normalizacao-unicode-em-python/
 # with open (context manager) e métodos úteis do TextIOWrapper
@@ -63,3 +65,6 @@ with open(caminho_arquivo, 'w', encoding='utf8') as arquivo:
     arquivo.writelines(
         ('Linha 3\n', 'Linha 4\n')
     )
+
+# os.remove(caminho_arquivo) # ou unlink
+# os.rename(caminho_arquivo, 'aula116-2.txt')
