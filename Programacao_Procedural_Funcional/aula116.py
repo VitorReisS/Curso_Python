@@ -23,7 +23,7 @@ import os
 # json.dump = Gera um arquivo json
 # json.load
 
-caminho_arquivo = 'c:\\Users\\vt_sousa\\Desktop\\Cursos\\Curso_Python\\Programacao_Procedural_Funcional\\aula116.txt'
+caminho_arquivo = 'Programacao_Procedural_Funcional\\aula116.txt'
 
 # arquivo = open(caminho_arquivo, 'w')
 # #
