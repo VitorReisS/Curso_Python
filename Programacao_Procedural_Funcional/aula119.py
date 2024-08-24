@@ -10,6 +10,7 @@
 # refazer = todo ['fazer café', 'caminhar']
 
 import os
+import json
 
 def listar(tarefas):
     if not tarefas:
@@ -65,7 +66,25 @@ def adicionar(tarefa, tarefas):
     print()
     listar(tarefas)
 
-tarefas = []
+def ler(tarefas, caminho_arquivo):
+    dados = []
+    try:
+        with open(caminho_arquivo, 'r', encoding='utf-8') as arquivo:
+            dados = json.load(arquivo)
+        return dados
+    except FileNotFoundError:
+        print('Arquivo não existe.')
+        salvar(tarefas, caminho_arquivo)
+    return dados
+
+def salvar(tarefas, caminho_arquivo):
+    dados = tarefas
+    with open(caminho_arquivo, 'w', encoding='utf-8') as arquivo:
+        dados = json.dump(tarefas, arquivo, indent=2, ensure_ascii=False)
+    return dados
+
+CAMINHO_ARQUIVO = 'Programacao_Procedural_Funcional//aula119.json'
+tarefas = ler([], CAMINHO_ARQUIVO)
 tarefas_refazer = []
 
 while True:
@@ -82,6 +101,7 @@ while True:
 
     comando = comandos.get(tarefa) if comandos.get(tarefa) is not None else comandos['adicionar']
     comando()
+    salvar(tarefas, CAMINHO_ARQUIVO)
 
     # if tarefa == 'listar':
     #     listar(tarefas)
