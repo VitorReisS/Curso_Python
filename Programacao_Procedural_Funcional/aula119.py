@@ -12,9 +12,10 @@
 import os
 
 def listar(tarefas):
-    print()
     if not tarefas:
+        print()
         print('Nenhuma tarefa para listar')
+        print()
         return
 
     print('Tarefas:')
@@ -23,63 +24,82 @@ def listar(tarefas):
     print()
 
 def desfazer(tarefas, tarefas_refazer):
-    print()
     if not tarefas:
+        print()
         print('Nenhuma tarefa para desfazer')
+        print()
         return
     
     tarefa = tarefas.pop()
+    print()
     print(f'{tarefa=} removida da lista de tarefas.')
     tarefas_refazer.append(tarefa)
     print()
+    listar(tarefas)
 
 def refazer(tarefa, tarefas_refazer):
-    print()
     if not tarefas_refazer:
+        print()
         print('Nenhuma tarefa para refazer')
+        print()
         return
 
     tarefa = tarefas_refazer.pop()
+    print()
     print(f'{tarefa=} adicionada na lista de tarefas.')
     tarefas.append(tarefa)
     print()
+    listar(tarefas)
 
 def adicionar(tarefa, tarefas):
-    print()
     tarefa = tarefa.strip()
     if not tarefa:
+        print()
         print('Você não digitou uma tarefa.')
+        print()
         return
     
+    print()
     print(f'{tarefa=} adicionada na lista de tarefas.')
     tarefas.append(tarefa)
     print()
+    listar(tarefas)
 
 tarefas = []
 tarefas_refazer = []
-
 
 while True:
     print('Comandos: listar, desfazer e refazer')
     tarefa = input('Digite uma tarefa ou comando: ')
 
-    if tarefa == 'listar':
-        listar(tarefas)
-        continue
-    elif tarefa == 'desfazer':
-        desfazer(tarefas, tarefas_refazer)
-        listar(tarefas)
-        continue
-    elif tarefa == 'refazer':
-        refazer(tarefas, tarefas_refazer)
-        listar(tarefas)
-        continue
-    elif tarefa == '0':
-        break
-    elif tarefa == 'clear':
-        os.system('cls')
-        continue
-    else:
-        adicionar(tarefa, tarefas)
-        listar(tarefas)
-        continue
+    comandos = {
+        'listar': lambda: listar(tarefas),
+        'desfazer': lambda: desfazer(tarefas, tarefas_refazer),
+        'refazer': lambda: refazer(tarefas, tarefas_refazer),
+        'clear': lambda: os.system('cls'),
+        'adicionar': lambda: adicionar(tarefa, tarefas),
+    }
+
+    comando = comandos.get(tarefa) if comandos.get(tarefa) is not None else comandos['adicionar']
+    comando()
+
+    # if tarefa == 'listar':
+    #     listar(tarefas)
+    #     continue
+    # elif tarefa == 'desfazer':
+    #     desfazer(tarefas, tarefas_refazer)
+    #     listar(tarefas)
+    #     continue
+    # elif tarefa == 'refazer':
+    #     refazer(tarefas, tarefas_refazer)
+    #     listar(tarefas)
+    #     continue
+    # elif tarefa == '0':
+    #     break
+    # elif tarefa == 'clear':
+    #     os.system('cls')
+    #     continue
+    # else:
+    #     adicionar(tarefa, tarefas)
+    #     listar(tarefas)
+    #     continue
