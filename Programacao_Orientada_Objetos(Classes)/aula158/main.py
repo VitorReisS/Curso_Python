@@ -8,14 +8,14 @@ Conta (ABC)
     ContaCorrente
     ContaPoupanca
 
-Pessoa (ABC)
+Pessoa
     Cliente
-        Clente -> Conta
+        Clente -> Conta (um para um ou um para muitos)
 
 Banco
     Banco -> Cliente
     Banco -> Conta
-    
+
 Dicas:
 Criar classe Cliente que herda da classe Pessoa (Herança)
     Pessoa tem nome e idade (com getters)
