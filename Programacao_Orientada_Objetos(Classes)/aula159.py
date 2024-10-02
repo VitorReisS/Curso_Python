@@ -6,37 +6,16 @@
 # Foi descrito na PEP 557 e adicionado na versão 3.7 do Python.
 # doc: https://docs.python.org/3/library/dataclasses.html
 
-from dataclasses import dataclass
+from dataclasses import dataclass, asdict, astuple
 
-@dataclass(repr=True)
+@dataclass
 class Pessoa:
     nome: str
-    # idade: int
     sobrenome: str
 
-    # def __init__(self, nome, sobrenome):
-    #     self.nome = nome
-    #     self.sobrenome = sobrenome
-    #     self.nome_completo = f'{self.nome} {self.sobrenome}'
-
-    # def __post_init__(self):
-    #     print('POST INIT')
-
-    # @property
-    # def nome_completo(self):
-    #     return f'{self.nome} {self.sobrenome}'
-
-    # @nome_completo.setter
-    # def nome_completo(self, valor):
-    #     nome, *sobrenome = valor.split()
-    #     self.nome = nome
-    #     self.sobrenome = ' '.join(sobrenome)
-
 if __name__ == '__main__':
-    # p1 = Pessoa('Vitor', 30)
-    # p2 = Pessoa('Vitor', 30)
-    # print(p1 == p2)
-    lista = [Pessoa('Vitor', 'Reis'), Pessoa('Fernanda', 'Castro'), Pessoa('Maria', 'Clara')]
-    ordenadas = sorted(lista, reverse=False, key=lambda p: p.sobrenome)
-    print(ordenadas)
-    # print(p1.nome_completo)
+    p1 = Pessoa('Vitor', 'Reis')
+    print(asdict(p1).keys())
+    print(asdict(p1).values())
+    print(asdict(p1).items())
+    print(astuple(p1)[0])
