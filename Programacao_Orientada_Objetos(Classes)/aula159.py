@@ -8,19 +8,19 @@
 
 from dataclasses import dataclass
 
-@dataclass(init=False)
+@dataclass(repr=True)
 class Pessoa:
     nome: str
     # idade: int
     sobrenome: str
 
-    def __init__(self, nome, sobrenome):
-        self.nome = nome
-        self.sobrenome = sobrenome
-        self.nome_completo = f'{self.nome} {self.sobrenome}'
+    # def __init__(self, nome, sobrenome):
+    #     self.nome = nome
+    #     self.sobrenome = sobrenome
+    #     self.nome_completo = f'{self.nome} {self.sobrenome}'
 
-    def __post_init__(self):
-        print('POST INIT')
+    # def __post_init__(self):
+    #     print('POST INIT')
 
     # @property
     # def nome_completo(self):
@@ -36,6 +36,7 @@ if __name__ == '__main__':
     # p1 = Pessoa('Vitor', 30)
     # p2 = Pessoa('Vitor', 30)
     # print(p1 == p2)
-    p1 = Pessoa('Vitor', 'Reis')
-    print(p1)
-    print(p1.nome_completo)
+    lista = [Pessoa('Vitor', 'Reis'), Pessoa('Fernanda', 'Castro'), Pessoa('Maria', 'Clara')]
+    ordenadas = sorted(lista, reverse=False, key=lambda p: p.sobrenome)
+    print(ordenadas)
+    # print(p1.nome_completo)
