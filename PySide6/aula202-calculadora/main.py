@@ -5,7 +5,7 @@ from info import Info
 from PySide6.QtWidgets import QApplication
 from main_window import MainWindow
 from styles import setupTheme
-from buttons import Button, ButtonsGrid
+from buttons import ButtonsGrid
 from variables import WINDOW_ICON_PATH
 
 if __name__ == "__main__":
